@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+    <color name="desert_storm">#F8F8F8</color>
+    <color name="color_6B6B6B">#6B6B6B</color>
+    <color name="white_smoke">#F6F6F6</color>
+    <color name="_grey_605E5C">#ff605e5c</color>
+    <color name="lightning_yellow">#F9A233</color>
+    <color name="lily_white">#EBEBEB</color>
+    <color name="transparent_bg">#50000000</color>
+    <color name="Gray_Line">#c0c0c0</color>
+
+    <drawable name="white_press">#ffffff</drawable>
+    <drawable name="gray_press">#FFC0C0C0</drawable>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent_background">#00000000</color>
+    <color name="gray">#c2c2c2</color>
+    <color name="gray1">#faebce</color>
+    <color name="gray2">#ffffff</color>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFFFF</color>
+    <color name="Orange">#ff831c</color>
+    <color name="Red">#FF0000</color>
+    <color name="Blue">#656567</color>
+    <color name="Green">#7bf16e</color>
+    <color name="DarkBlue">#00008B</color>
+    <color name="LightSteelBlue">#b0c4de</color>
+    <color name="other">#024079</color>
+    <color name="result_points">#c000ff00</color>
+
+
+    <color name="titleBlue">#00d2f2</color>
+    <color name="grey">#a6a7a7</color>
+    <color name="white_fafafa">#fafafa</color>
+
+    <color name="text_color_enable">#8c8c8c</color>
+    <color name="parameterSettingTextColor">#848484</color>
+    <color name="dialog_bg">#93C2F9</color>
+</resources>

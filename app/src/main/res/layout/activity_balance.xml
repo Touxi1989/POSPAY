@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg1"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include
+        layout="@layout/include_title_bar"
+        android:id="@+id/title_bar"/>
+
+    <!-- 1. 请刷银行卡页面 -->
+    <LinearLayout
+        android:id="@+id/card_reading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/swingcard"
+            android:contentDescription="读卡器图标"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="请刷银行卡"
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/reader_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="正在启动读卡器..."
+            android:textColor="@color/Green"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- 2. 确认银行卡号页面 -->
+    <LinearLayout
+        android:id="@+id/confirm_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ConfirmCardNo"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/card_no_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="22sp"
+            android:textColor="@color/Red"
+            android:letterSpacing="0.1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <Button
+                android:id="@+id/cancel_card_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_red_selector"
+                android:text="@string/bn_cancel"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/confirm_card_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_blue_selector"
+                android:text="@string/bn_confirm"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3. 输入密码页面 -->
+    <LinearLayout
+        android:id="@+id/input_password_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+
+
+    </LinearLayout>
+
+    <!-- 4. 通讯过程中页面 -->
+    <LinearLayout
+        android:id="@+id/communicating_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+    <!-- 5. 显示查询结果页面 -->
+    <LinearLayout
+        android:id="@+id/result_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/balance_success"
+            android:textColor="@color/Green"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/result_card_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/Gray_Line"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/result_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/btn_blue_selector"
+            android:text="@string/bn_confirm"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

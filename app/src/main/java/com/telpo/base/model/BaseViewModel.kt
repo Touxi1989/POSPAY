@@ -15,6 +15,7 @@ open class BaseViewModel : ViewModel() {
         get() = this
 
 
+
     /**
      * 网络状态
      */
@@ -26,7 +27,7 @@ open class BaseViewModel : ViewModel() {
      * 协程异常处理器
      */
     val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
-        //        Log.e(TAG, "coroutineExceptionHandler ", exception)
+//        Log.e(TAG, "coroutineExceptionHandler ", exception)
         exception.printStackTrace()
         _exception.value = exception
     }
@@ -34,10 +35,10 @@ open class BaseViewModel : ViewModel() {
     /**
      * 本地提示
      */
-    val _tip = MutableLiveData<Int>()
+    protected val _tip = MutableLiveData<Int>()
     val tip: LiveData<Int> = _tip
 
-     val _msg = MutableLiveData<String>()
+    protected val _msg = MutableLiveData<String>()
     val msg: LiveData<String> = _msg
 
 
@@ -56,7 +57,7 @@ open class BaseViewModel : ViewModel() {
     /**
      * 是否显示对话框
      */
-    val _loading = MutableLiveData<String>()
+    protected val _loading = MutableLiveData<String>()
     val loading: LiveData<String> = _loading
 
     /**

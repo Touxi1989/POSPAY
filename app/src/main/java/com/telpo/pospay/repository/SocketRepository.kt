@@ -2,7 +2,7 @@ package com.telpo.pospay.repository
 
 import android.content.Context
 import com.telpo.base.internet.socket.LongConnectSocket
-import com.telpo.base.util.MLog
+import com.telpo.base.util.TLog
 import com.telpo.base.util.StringUtil
 import kotlinx.coroutines.flow.first
 import kotlin.experimental.and
@@ -32,7 +32,7 @@ class SocketRepository private constructor(private val appContext: Context) :
         val socket = LongConnectSocket.getSocketInstance("192.168.1.144", 9999)
         val os = socket.getOutputStream()
         os.write(sendData) //编码方式还有ASCII;UTF-8;UNICORE;GB2312?
-        MLog.i("发送数据:" + StringUtil.bytesToHexString(sendData))
+        TLog.i("发送数据:" + StringUtil.bytesToHexString(sendData))
         os.flush()
         Thread.sleep(500)
         val ins = socket.getInputStream()
@@ -44,14 +44,14 @@ class SocketRepository private constructor(private val appContext: Context) :
                 ((dataLenBuff[0] and 0xff.toByte()).toInt() shl 8) or (dataLenBuff[1] and 0xff.toByte()).toInt()
         dataBuff = ByteArray(dataLen)
 
-        MLog.i("dataLen:$dataLen")
+        TLog.i("dataLen:$dataLen")
 
         if (ins.read(dataBuff) == dataLen) {
             val recevieData: String =
                     StringUtil.bytesToHexString(dataLenBuff) + StringUtil.bytesToHexString(
                         dataBuff
                     )
-            MLog.i("接收数据:" + recevieData)
+            TLog.i("接收数据:" + recevieData)
         } else {
         }
 

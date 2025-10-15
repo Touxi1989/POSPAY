@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_job"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="岗位:小骑兵店长"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_daiyu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="待遇：5000-8000元/月"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单位:广西小骑兵餐饮管理有限公司"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_jobType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="岗位类别:住宿和餐饮服务人员"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/tv_zpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="招聘日期:2025-10-11至2025-11-30"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/ly_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_E1E1E1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_xueli"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="学历:本科"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="年龄:30-55"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_fuli"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="福利:五险,工龄,餐补"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_people"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="人数:男10人,女10人"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_Contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="联系人:陈经理"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_Contact_Phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="联系电话:18877176881"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电子邮箱:227827563@qq.com"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_work_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作日期:2025-10-11至2025-11-30"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作地点:南宁市兴宁区虎邱西路9号虎邱广场小骑兵"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

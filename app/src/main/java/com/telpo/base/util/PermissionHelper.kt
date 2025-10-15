@@ -57,16 +57,16 @@ class PermissionHelper(private val activity: AppCompatActivity) {
             )
         }
 
-//        // 检查悬浮窗权限
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
-//            !Settings.canDrawOverlays(activity)) {
-//            showSpecialPermissionDialog(
-//                title = "悬浮窗权限",
-//                message = "请开启悬浮窗权限，否则无法正常使用本应用！",
-//                intent = specialPermissions["SYSTEM_ALERT_WINDOW"]!!,
-//                onCancel = { allGranted = false }
-//            )
-//        }
+        // 检查悬浮窗权限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+            !Settings.canDrawOverlays(activity)) {
+            showSpecialPermissionDialog(
+                title = "悬浮窗权限",
+                message = "请开启悬浮窗权限，否则无法正常使用本应用！",
+                intent = specialPermissions["SYSTEM_ALERT_WINDOW"]!!,
+                onCancel = { allGranted = false }
+            )
+        }
 
         return allGranted
     }

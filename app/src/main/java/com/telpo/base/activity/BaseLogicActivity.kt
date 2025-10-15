@@ -3,9 +3,10 @@ package com.telpo.base.activity
 import android.util.Log
 import android.widget.Toast
 import com.loading.dialog.IOSLoadingDialog
+import com.telpo.AppContext
 import com.telpo.base.model.BaseViewModel
-import com.telpo.pospay.AppContext
-import com.telpo.pospay.R
+import com.telpo.base.util.TLog
+import com.telpo.gxss.R
 import org.apache.commons.lang3.StringUtils
 import java.lang.ref.WeakReference
 
@@ -53,8 +54,6 @@ open class BaseLogicActivity : BaseCommonActivity() {
         viewModel.loading.observe(this) {
             if (StringUtils.isNotBlank(it)) showLoading(it) else hideLoading()
         }
-
-
     }
 
 
@@ -92,7 +91,7 @@ open class BaseLogicActivity : BaseCommonActivity() {
      * 显示加载对话框
      */
     open fun showLoading(data: String = getString(R.string.loading)) {
-        Log.d("TAG", "showLoading: " + data)
+        TLog.d( "showLoading: " + data)
         if (loadingDialog == null || loadingDialog!!.get() == null) {
             loadingDialog = WeakReference(
                 IOSLoadingDialog().setOnTouchOutside(false))

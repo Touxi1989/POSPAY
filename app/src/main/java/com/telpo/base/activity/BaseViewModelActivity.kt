@@ -1,8 +1,6 @@
 package com.telpo.base.activity
 
 import android.os.Bundle
-import android.view.Window
-import android.view.WindowManager
 import androidx.viewbinding.ViewBinding
 import com.telpo.base.util.ReflectUtil
 
@@ -17,9 +15,6 @@ open class BaseViewModelActivity<VB : ViewBinding> : BaseLogicActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE);//无标题?
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//全屏?
-
 
         //调用inflate方法，创建viewBinding
         binding = ReflectUtil.newViewBinding(layoutInflater, javaClass)
@@ -27,4 +22,3 @@ open class BaseViewModelActivity<VB : ViewBinding> : BaseLogicActivity() {
         setContentView(binding.root)
     }
 }
-

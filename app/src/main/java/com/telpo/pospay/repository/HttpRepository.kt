@@ -5,11 +5,14 @@ import com.alibaba.fastjson.JSONObject
 import com.telpo.base.internet.http.RetrofitHelper
 import com.telpo.base.internet.http.ServerApi
 import com.telpo.base.internet.response.TokenResponse
+import com.telpo.gx_social_security.bean.DeviceTokenRequest
+import com.telpo.gx_social_security.bean.GgzpxxRequest
 import kotlinx.coroutines.flow.first
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Response
+
 
 class HttpRepository private constructor(private val appContext: Context) :
     BaseRepository(appContext) {
@@ -44,6 +47,44 @@ class HttpRepository private constructor(private val appContext: Context) :
                     url,
                     ServerApi::class.java as Class<ServerApi?>)
                     ?.oauth(body)
+        return response
+
+    }
+
+
+    suspend fun deviceToken1(): Response<TokenResponse>? {
+        if (!networkUtils.isNetworkAvailable().first()) {
+            throw Exception("Network is unAvailable") // 网络不可用
+        }
+
+
+        val url = "http://www.tpai-plat.com:8888"
+        val response =
+                RetrofitHelper.instance?.getApiService<ServerApi?>(
+                    url,
+                    ServerApi::class.java as Class<ServerApi?>)
+                    ?.oauth(
+                        DeviceTokenRequest(
+                            appSecret = "c9537edd37521e415460b45b25a7ffdc",
+                            appKey = "telpo",
+                            grantType = "device_credentials",
+                            scope = "base"))
+        return response
+
+    }
+
+
+    suspend fun queryGgzpxx(ggzpxxRequest: GgzpxxRequest): Response<String>? {
+        if (!networkUtils.isNetworkAvailable().first()) {
+            throw Exception("Network is unAvailable") // 网络不可用
+        }
+
+        val url = "http://172.16.23.45:9091"
+        val response =
+                RetrofitHelper.instance?.getApiService<ServerApi?>(
+                    url,
+                    ServerApi::class.java as Class<ServerApi?>)
+                    ?.queryGgzpxx(ggzpxxRequest)
         return response
 
     }

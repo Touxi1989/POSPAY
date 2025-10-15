@@ -8,7 +8,7 @@ public class LongConnectSocket {
 
         java.net.Socket instance = new java.net.Socket();
         java.net.SocketAddress socAddress = new java.net.InetSocketAddress(ip, port);
-        instance.connect(socAddress, 3000);// 设置socket的超时时间
+        instance.connect(socAddress, 60000);// 设置socket的超时时间
         instance.setSoTimeout(60000);// 设置read的超时时间
 
         return instance;

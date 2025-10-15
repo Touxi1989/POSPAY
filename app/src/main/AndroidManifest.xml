@@ -19,51 +19,42 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name="com.telpo.pospay.AppContext"
+        android:name="com.telpo.AppContext"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/social_security_blue"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Test"
         android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/social_security_blue"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.app"
         tools:targetApi="31">
         <activity
-            android:name="com.telpo.pospay.main.activity.StartAppActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:name="com.telpo.gx_social_security.activity.GgzpxxActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.telpo.gx_social_security.activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.telpo.pospay.main.activity.MainActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            tools:ignore="AppLinkUrlError">
+        <activity
+            android:name="com.telpo.pospay.main.TestActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="mainmenu" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity>
-
-        <activity android:name=".main.activity.MainMenuActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity android:name=".main.activity.BalanceActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            tools:ignore="Instantiatable">
-        </activity>
-
+        <activity
+            android:name="com.telpo.gx_social_security.activity.SearchActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
     </application>
 
 </manifest>

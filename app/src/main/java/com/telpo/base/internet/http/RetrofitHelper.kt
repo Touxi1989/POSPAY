@@ -2,7 +2,7 @@ package com.telpo.base.internet.http
 
 import android.annotation.SuppressLint
 import com.telpo.base.internet.http.factory.FastJsonConverterFactory
-import com.telpo.pospay.BuildConfig
+import com.telpo.gxss.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.apache.http.conn.ssl.SSLSocketFactory
@@ -70,7 +70,7 @@ class RetrofitHelper private constructor() {
             val builder = newUnsafeClientBuilder()
             if (BuildConfig.DEBUG) {
                 val logging = HttpLoggingInterceptor()
-                logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
+                logging.setLevel(HttpLoggingInterceptor.Level.BODY)
                 builder.addInterceptor(logging)
             }
             return builder.build()

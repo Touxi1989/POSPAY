@@ -11,15 +11,7 @@ import kotlinx.coroutines.flow.Flow
 
 //DAO 负责数据库的 CRUD 操作：
 @Dao
-interface DiaryDao : BaseDao<DiaryEntry> {
-
-
-    companion object {
-        // 定义一个方法来获取关联的实体类
-        fun getTableName() = DiaryEntry.TABLE_NAME
-    }
-
-
+interface DiaryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDiary(entry: DiaryEntry)
 
@@ -32,18 +24,12 @@ interface DiaryDao : BaseDao<DiaryEntry> {
     @Query("SELECT * FROM diary_entries ORDER BY date DESC")
     fun getAllDiaries(): List<DiaryEntry> // 直接返回列表（不推荐，建议使用 Flow）
 
-    @Query("SELECT * FROM diary_entries ORDER BY date DESC")
-    fun getAllDiariesFlow(): Flow<List<DiaryEntry>> // 使用 Flow 以支持实时监听
-
     @Query("SELECT * FROM diary_entries WHERE id = :id")
     suspend fun getDiaryById(id: Int): DiaryEntry?
 
     @Query("SELECT * FROM diary_entries WHERE title LIKE '%' || :query || '%'")
     fun searchDiaries(query: String): List<DiaryEntry>
 
-
+    @Query("SELECT * FROM diary_entries ORDER BY date DESC")
+    fun getAllDiariesFlow(): Flow<List<DiaryEntry>> // 使用 Flow 以支持实时监听
 }
-
-
-
-

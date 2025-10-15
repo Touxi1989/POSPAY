@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.telpo.pospay'
+    namespace 'com.telpo.gxss'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.telpo.pospay"
+        applicationId "com.telpo.gxss"
         minSdk 25
         targetSdk 35
         versionCode 1
@@ -39,6 +39,7 @@ android {
         buildConfig = true
     }
 
+    useLibrary 'org.apache.http.legacy'
 }
 
 
@@ -62,10 +63,8 @@ dependencies {
     androidTestImplementation libs.androidx.ui.test.junit4
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
+    implementation libs.androidx.swiperefreshlayout
 
-
-    //金融sdk
-    implementation files('libs/sdk-release.aar')
 
     //SSLSocket
     implementation files('libs\\ipp-lib-1.0_RELEASE_PRO.jar')
@@ -73,6 +72,8 @@ dependencies {
     //加载对话框
     //https://github.com/ydstar/loadingdialog
     implementation project(path: ':loading-dialog')
+    implementation project(':searchview')
+    implementation project(':PullRefreshSwipeLib')
 
     //lifecycle
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
@@ -84,11 +85,8 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.8'
 
     // 屏幕适配
-    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
-
-    //kt反射
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+//    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+//    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
 
 
     //apache common lang3工具包
